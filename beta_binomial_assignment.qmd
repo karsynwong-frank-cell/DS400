@@ -86,7 +86,7 @@ Based on the womens basketball team's previous competitive season and preseason 
 define π - the team's true underlying probability of winning a game.
 
 ```{r}
-#plot_beta(alpha = 25, beta = 25)
+plot_beta(alpha = 25, beta = 25)
 ```
 
 Statement = "Before any new data we believe there's a 95% chance π is between 36% and 64%, with 50% as our single best guess."
@@ -100,7 +100,7 @@ mean = 50%
 **New data arrives:** We commission new data of *n = 10 games* and record *y* = 7, the number of games the team won. We gather 10 data points in which y = 7 (70%) resulted in wins -- noticeably higher than the 50% prior average.
 
 ```{r}
-#plot_binomial_likelihood(y = 7, n = 10)
+plot_binomial_likelihood(y = 7, n = 10)
 ```
 
 Likelihood Question: "For each possible value of π —the underlying probability of winning a game— how compatible is that value with having produced exactly 7 wins out of 10 games in this data collection?"
@@ -110,7 +110,7 @@ Likelihood Statement: "Taken on its own, this data makes values of π near 70% f
 ### Posterior
 
 ```{r}
-#plot_beta_binomial(alpha = 25, beta = 25, y = 7, n = 3)
+plot_beta_binomial(alpha = 25, beta = 25, y = 7, n = 3)
 ```
 
 Statement = "There's a 95% probability that π lies between 40.7% and 65.8%."
