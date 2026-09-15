@@ -27,13 +27,13 @@ swim <- read_csv(here("data/swim_panel_dataset_1500.csv"))
 Histogram of finished swim times
 
 ```{r}
-
+ggplot(data = swim, aes(finish_time_min)) + geom_histogram()
 ```
 
 Color by Event
 
 ```{r}
-
+ggplot(data = swim, aes(x = finish_time_min, fill = race_name)) + geom_histogram(color = "black")
 ```
 
 Finish or not by event
@@ -47,13 +47,17 @@ ggplot(data = swim, aes(y = race_name, fill = factor(finished))) +
 Scatter plot of finish times and age colored by event
 
 ```{r}
-
+ggplot(data = swim, aes(x = finish_time_min, y = age, color = race_name)) +
+  geom_point(size = 0.2) + 
+  facet_wrap(~race_name, scales = "free_x")
 ```
 
 Boxplot of finish times by event
 
 ```{r}
-
+ggplot(data = swim, aes(x = finish_time_min, y = race_name, fill = race_name)) +
+  geom_boxplot() +
+  theme(legend.position = "none")
 ```
 
 Let's say Tallen and I finish the Waikiki Roughwater Race!
@@ -84,7 +88,13 @@ P(B)
 what is the probability of completing the Alcatraz Sharkfest Swim
 
 ```{r}
+probability_complete_alcatraz <- swim_wide |>
+  count(finished_alcatraz) |>
+  mutate(percent = n / sum(n)) |>
+  filter(finished_alcatraz == "Yes") |>
+  pull(percent)
 
+probability_complete_alcatraz
 ```
 
 P(A\|B)
@@ -103,7 +113,13 @@ probability_complete_waikiki_given_complete_alcatraz
 P(A)
 
 ```{r}
+probability_complete_waikiki <- swim_wide |>
+  count(finished_waikiki) |>
+  mutate(percent = n / sum(n)) |>
+  filter (finished_waikiki == "Yes") |>
+  pull(percent)
 
+probability_complete_waikiki
 ```
 
 P(B\|A)
