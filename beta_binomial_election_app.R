@@ -33,8 +33,11 @@
 ## interval.
 ##
 ## Your answer:
-##
-##
+## alpha = 230, beta = 154 -> Beta(230, 154)
+## mean = 230 / 384 = 0.599
+## 95% credible interval is about 55% to 65%
+## (This pair matches the analyst's description: centered near 60%
+## with most belief between 55% and 65%.)
 ## ------------------------------------------------------------
 ## Q2 (Tab 1) -- Starting from Michelle's actual prior (reset to
 ## Beta(45, 55)), scale both alpha and beta up by 4x (Beta(180, 220))
@@ -43,8 +46,14 @@
 ## explain why the mean doesn't move but the interval does.
 ##
 ## Your answer:
-##
-##
+## The mean stays at 0.45 for both Beta(45, 55) and Beta(180, 220).
+## The 95% credible interval narrows from about 35%-55% (roughly 19
+## points wide) to about 40%-50% (roughly 10 points wide), so it
+## shrinks by about half.
+## The mean depends only on the ratio alpha : beta, which didn't change,
+## but the spread depends on alpha + beta, the prior's effective sample
+## size. Scaling both up by 4x means the same belief is held with more
+## confidence, so the interval tightens.
 ## ------------------------------------------------------------
 ## Q3 (Tab 1) -- Set alpha = beta = 1 (the flat prior). What are the
 ## mean, mode, and SD? Now try alpha = beta = 0.5. Both cases report
@@ -54,16 +63,24 @@
 ## no single mode (hint: where does the density pile up?).
 ##
 ## Your answer:
-##
-##
+## Beta(1, 1):     mean = 0.500, mode = no single mode, SD = 0.289
+## Beta(0.5, 0.5): mean = 0.500, mode = no single mode, SD = 0.354
+## Beta(1, 1) is perfectly flat, so every value of pi is equally
+## plausible. No single point is more likely than any other, so there
+## is no single mode.
+## Beta(0.5, 0.5) is U-shaped. The density piles up near 0 and 1, so
+## it has two peaks at the ends and no single mode.
 ## ------------------------------------------------------------
 ## Q4 (Tab 2) -- Set alpha = beta = 1, then n = 50, y = 30. Compare the
 ## Posterior curve to the Scaled Likelihood curve. What do you notice?
 ## Explain why this happens in terms of what a flat prior represents.
 ##
 ## Your answer:
-##
-##
+## The posterior is exactly the same as the scaled likelihood.
+## A flat prior Beta(1, 1) is constant across all values of pi, so it
+## doesn't favor any value over another. Multiplying the likelihood by a
+## constant only rescales it, so the posterior has the same shape as the
+## likelihood. The data alone determines the result.
 ## ------------------------------------------------------------
 ## Q5 (Tab 2) -- Reset to the text's numbers (alpha=45, beta=55, n=50,
 ## y=30). Read off the weight sentence under the posterior summary. Now
@@ -72,7 +89,14 @@
 ## overrule a moderately confident prior?
 ##
 ## Your answer:
-##
+## With n = 50, the prior (worth ~100 pseudo-voters) gets about 67% of
+## the weight and the poll gets about 33%. The posterior mean is 0.50.
+## With n = 500, the prior gets only about 17% and the data gets about
+## 83%. The posterior mean moves to about 0.575, much closer to the
+## data's 60%.
+## For new data to overrule a moderately confident prior, the sample
+## has to be several times larger than the prior's effective sample
+## size (alpha + beta).
 ##
 ## ------------------------------------------------------------
 ## Q6 (Tab 2) -- Using the text's numbers (alpha=45, beta=55, n=50,
@@ -82,7 +106,15 @@
 ## interval cannot -- and why.
 ##
 ## Your answer:
-##
+## The frequentist 95% CI (data alone) is about 45% to 74%. The Bayesian
+## 95% credible interval is about 42% to 58%, narrower and pulled toward
+## the prior.
+## The credible interval says there is a 95% probability that the true
+## support pi lies in this range. The confidence interval cannot say
+## that, because the frequentist approach treats pi as a fixed, unknown
+## constant. pi is either in the interval or it isn't. The 95% describes
+## how often the method captures pi over many repeated polls, not the
+## probability for this one interval.
 ##
 ## ------------------------------------------------------------
 ## Q7 (Tab 2) -- Set alpha = 90, beta = 10 (strong prior belief support
@@ -92,7 +124,12 @@
 ## weight sentence? Why did the data win here when it didn't in Q5?
 ##
 ## Your answer:
-##
+## The posterior, Beta(130, 170), has a mean of about 0.43. That is much
+## closer to the data (20%) than the prior (90%).
+## This matches the weight sentence: the prior is worth ~100
+## pseudo-voters (33% of the weight) and the poll is n = 200 voters (67%).
+## In Q5 the prior outweighed the poll (100 vs. 50). Here the poll is
+## twice the size of the prior, so the data wins.
 ##
 ## ------------------------------------------------------------
 ## Q8 (Reflection -- no fixed answer) -- The app's posterior treats
@@ -105,7 +142,15 @@
 ## noisily varying around a fixed number.
 ##
 ## Your answer:
-##
+## The model gives the prior the same weight no matter how old it is.
+## If something happened after the prior was formed that changed
+## support (as in Q7), the stale prior still pulls the posterior toward
+## old values, and when the prior is strong (as in Q5) the posterior
+## lags behind the new data.
+## If I suspected support was trending upward, I'd want the model to
+## down-weight older information, for example by weighting recent polls
+## more heavily or by using a model where pi is allowed to change over
+## time (a dynamic model) instead of staying fixed.
 ##
 ## ============================================================
 
