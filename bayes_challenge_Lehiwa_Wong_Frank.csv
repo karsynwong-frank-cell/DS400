@@ -1,0 +1,38 @@
+student,item,question,part,answer,correct,points,time
+Lehiwa Wong-Frank,q1m,1,Choose the model,Bayesian logistic regression,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q1a,1,Odds multiplier for 15 points,2.05,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q1b,1,Odds vs probability,"A 15-point rise in humidity roughly doubles the odds of rain tomorrow, which is not the same as doubling the probability.",TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q2m,2,Choose the model,Bayes' theorem,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q2a,2,Posterior with a 10% base rate,0.997,FALSE,0,2026-10-29 15:23
+Lehiwa Wong-Frank,q2b,2,Meaning of P(! | fake),About 27% of articles with an exclamation point are fake.,FALSE,0,2026-10-29 15:23
+Lehiwa Wong-Frank,q3m,3,Choose the model,Hierarchical (multilevel) model,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q3a,3,Why the slopes disagree,The pooled model mixes differences between runners with changes within a runner. The hierarchical model compares each runner with themselves.,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q3b,3,Between vs within runners,Runners differ from each other in baseline speed much more than one runner varies from year to year.,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q4m,4,Choose the model,Beta-binomial model,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q4a,4,"Posterior mean with Beta(5, 11)",0.01,FALSE,0,2026-10-29 15:23
+Lehiwa Wong-Frank,q4b,4,A flat prior,"A Beta(1, 1) prior is flat and carries only about 2 pseudo-observations, so the data dominate.",TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q5m,5,Choose the model,Bayesian linear regression,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q5a,5,Interpret the slope,"On average, each additional degree of felt temperature is associated with about 82 more rides per day.",TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q5b,5,Interpret sigma,"Even on days with the same temperature, daily rides typically differ from the line by about 1,300 rides.",TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q6m,6,Choose the model,Naive Bayes classifier,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q6a,6,Accuracy with two predictors,0.953,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q6b,6,The 'naive' assumption,"Within each species, the predictors are treated as independent of each other.",TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q7m,7,Choose the model,Hierarchical (multilevel) model,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q7a,7,Respond to a colleague,"The pooled model mixes patterns between genres and artists with the pattern within an artist. Comparing songs by the same artist, more playlists go with higher popularity.",TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q7b,7,Causal claim,True,FALSE,0,2026-10-29 15:23
+Lehiwa Wong-Frank,q8a,8,Statement 1,Beta-binomial model,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q8b,8,Statement 2,Bayes' theorem,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q8c,8,Statement 3,Bayesian linear regression,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q8d,8,Statement 4,Bayesian logistic regression,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q8e,8,Statement 5,Naive Bayes classifier,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q8f,8,Statement 6,Hierarchical (multilevel) model,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q8g,8,Statement 7,BART (Bayesian additive regression trees),TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q9a,9,p-value,False,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q9b,9,Credible interval,True,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q9c,9,Partial pooling,True,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q9d,9,Naive Bayes,True,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q9e,9,BART,False,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q9f,9,Few groups,False,TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q10a,10,Prevention vs TH,"Prevention probably lowers reentry relative to TH, but the interval just includes zero, so the evidence is suggestive rather than conclusive.",TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,q10b,10,TH vs RRH,"The data can't separate TH from RRH on average. The interval is wide and centered near zero, so cost or subgroup effects should drive the choice.",TRUE,1,2026-10-29 15:23
+Lehiwa Wong-Frank,TOTAL,,,,NA,32,2026-10-29 15:23
