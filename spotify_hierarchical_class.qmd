@@ -166,7 +166,35 @@ Your turn: Create the hierarchical model for n_playlists as a predictor, account
 - Keep priors & mcmc parameters the same as our previous model
 
 ```{r}
+spotify_hier_model_2 <- stan_glmer(
+  popularity ~ n_playlists + (n_playlists | artist),
+  data = spotify,
+  family = gaussian,
+  prior_intercept = normal(50, 2.5, autoscale = TRUE),
+  prior = normal(0, 2.5, autoscale = TRUE),
+  prior_aux = exponential(1, autoscale = TRUE),
+  prior_covariance = decov(reg = 1, conc = 1, shape = 1, scale = 1),
+  chains = 4, iter = 5000 * 2, seed = 84735
+)
 
+# Diagnostics
+bayesplot::mcmc_trace(spotify_hier_model_2, pars = c("n_playlists", "sigma"))
+pp_check(spotify_hier_model_2)
+
+# Global intercept and slope (80% credible intervals)
+tidy(spotify_hier_model_2, effects = "fixed", conf.int = TRUE, conf.level = 0.80)
+
+# Variance components (between-artist sds, correlation, and sigma)
+tidy(spotify_hier_model_2, effects = "ran_pars")
+
+# Artist-specific slopes = global slope + artist deviation
+global_slope <- fixef(spotify_hier_model_2)[["n_playlists"]]
+
+tidy(spotify_hier_model_2, effects = "ran_vals") |>
+  filter(term == "n_playlists") |>
+  mutate(artist_slope = global_slope + estimate) |>
+  select(artist = level, artist_slope) |>
+  arrange(desc(artist_slope))
 ```
 
 ```{r}

@@ -305,7 +305,7 @@ news_data %>%
 ```
 
 | Model | Sensitivity (catching fake) | Specificity (catching real) | Accuracy |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | Model 1 (`title_has_excl`) | 26.67% | 97.78% | 69.3% |
 | Model 2 (+ `title_words`) | 36.67% | 90.00% | 68.7% |
 | Model 3 (+ `title_caps_percent`, `negative`) | **48.33%** | 83.33% | **69.33%** |
